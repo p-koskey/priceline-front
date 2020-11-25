@@ -1,0 +1,49 @@
+<div class="container-fluid p-3">
+    <h1 class="text-center text-white"></h1>
+    <hr class="title">
+    <div class="row">
+     
+        <div class="col-6 pt-5">
+        <div class="d-flex flex-row flex-wrap justify-content-around" >
+        <div  class="">       
+            <div class="" style="">
+                <img src="https://res.cloudinary.com/dusqcbdtg/{{car.image}}" class="" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title text-center font-weight-bolder">{{car.name}}</h3>
+                  <h4 class="card-text ">No. of Seats: {{car.seats}}</h4>
+                  <h4 class="card-text ">No. of Doors: {{car.doors}}</h4>
+                 
+                  <h4 class="card-text ">Fuel : {{car.fuel}}</h4>
+                  <h4 class="card-text  ">Transmission: {{car.transmission}}</h4>
+ 
+                  <h4 class="card-text">Rent Per Day: Ksh.{{car.daily_rent}}</h4>
+
+                </div>
+              </div>
+    </div>
+    </div>
+</div>
+         
+        <div class="col-6 w-100">
+        <div class="d-flex flex-row flex-wrap" >
+        <div  class="card  shadow-lg p-3 rounded">       
+            <div class="" style="">
+                <h2 class="text-center">Book This Car</h2>
+               <form class="p-3" [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+                <label for="number">Phone Number:</label>
+                <input type="tel" class="form-control" placeholder="+2547XX-XXX-XXX"
+                    name="cell_no"><br>
+                <label for="address">Address:</label><br>
+                <input type="text" placeholder="Address" name="address"><br><br>
+                <label for="date">Pick-up Date:</label><br>
+                <input type="datetime-local" class="form-control" name="startdate"><br>
+                <label for="date">Drop-off Date:</label><br>
+                <input type="datetime-local" class="form-control" name="returndate"><br>
+                <button type="submit"  class="btn btn-primary">Book</button>
+            </form>
+              </div>
+    </div>
+    </div>
+</div>
+    </div>
+</div>

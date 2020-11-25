@@ -1,0 +1,21 @@
+<div class="col-md-12"><br>
+    <div id="booking">
+        <div class="container" style="width:max-content">
+            <h3>BOOKINGS</h3>
+            <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+                <label for="number">Your phonenumber</label>
+                <input type="tel" class="form-control" placeholder="Kindly enter your phonenumber"
+                    name="cell_no"><br>
+                <label for="email">Your Email address</label>
+                <input type="email" class="form-control" placeholder="Kindly enter your email" name="email"><br>
+                <label for="address">Pick-up and drop-off address</label>
+                <input type="text" placeholder="address" name="address"><br>
+                <label for="date">Pick-up-date</label>
+                <input type="datetime-local" class="form-control" name="startdate"><br>
+                <label for="date">Drop-of-date</label>
+                <input type="datetime-local" class="form-control" name="returndate"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

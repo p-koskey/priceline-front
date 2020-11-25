@@ -1,0 +1,20 @@
+<div style="background-color:rgb(19, 103, 160); color:whitesmoke">
+    <h1 style="text-align:center">Group9 Administration</h1>
+    <p style="text-align:center">WELCOME, GROUP9. <a routerLink="/" style="color:whitesmoke">view site</a></p>
+</div>
+
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <div class="form-group">
+            <input type="file" (change)="uploadFile($event)">
+        </div>
+
+        <div class="form-group input-group-lg">
+            <input class="form-control" placeholder="Name and description of the car" formControlName="name">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-danger btn-block btn-lg">Upload</button>
+        </div>
+    </form>
+</div>

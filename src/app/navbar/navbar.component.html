@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="" routerLinkActive='active'><b>PRICELINE</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     
+      <li class="nav-item">
+        <!-- <a class="nav-item nav-link" routerLink="/admin" routerLinkActive='active'>Admin Dashboard</a> -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-item nav-link" routerLink="/categories" routerLinkActive='active'>Categories</a>
+      </li>
+
+      <li class="nav-item dropdown" *ngIf="(LoginStatus$ | async) as LoginStatus">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+         routerLinkActive='active'>
+        {{user.username | titlecase}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/profile"  href="#">View Profile</a>
+          <a class="dropdown-item" href="#">Edit Profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="onLogout()" routerLinkActive='active'>Logout</a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="!(LoginStatus$ | async) as LoginStatus" >
+        <a class="nav-item nav-link" routerLink="/login" routerLinkActive='active'>Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!(LoginStatus$ | async) as LoginStatus" >
+        <a class="nav-item nav-link" routerLink="/register" routerLinkActive='active'>Register</a>
+      </li>
+    </ul>
+   
+  </div>
+</nav>

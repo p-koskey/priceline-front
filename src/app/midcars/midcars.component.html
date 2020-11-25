@@ -1,0 +1,25 @@
+<div class="container-fluid p-3">
+    <h1 class="text-center text-white">Mid-size Cars</h1>
+    <hr class="title">
+    <div class="row">
+     
+        <div class="col-md-9">
+        <div class="d-flex flex-row flex-wrap justify-content-around" >
+        <div *ngFor = 'let car of midcars; let i = index' class="card m-3 shadow-lg p-3 rounded">       
+            <div class="card" style="width: 18rem;">
+                <img src="https://res.cloudinary.com/dusqcbdtg/{{car.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{car.name}}</h5>
+                  <p class="card-text">No. of Seats: {{car.seats}}</p>
+                  <p class="card-text">No. of Doors: {{car.doors}}</p>
+                  <p class="card-text">Fuel : {{car.fuel}}</p>
+                  <p class="card-text">Transmission: {{car.transmission}}</p>
+                  <a href="" *ngIf="(LoginStatus$ | async) as LoginStatus" routerLink="/book"  class="btn btn-primary">Book Now</a>
+                  <a href="" *ngIf="!(LoginStatus$ | async) as LoginStatus" routerLink="/login"  class="btn btn-primary">Login to Book</a>
+                </div>
+              </div>
+    </div>
+    </div>
+</div>
+    </div>
+</div>
